@@ -1,6 +1,6 @@
-# POS-Essential ADR Pages
+# Docsify examples
 
-- POS-Essential 깃허브의 모든 markdown (주로 ADR과 architecture 문서)의 리스트들을 렌더링했습니다.
+- Submodule의 README.md 파일을 docsify로 변환하여 제공합니다.
 
 
 - 현재는 아래 기능들을 제공합니다. 
@@ -15,9 +15,8 @@
   - golang 문법은 미지원
 
 ## Target Repositories
-- pos-essential-orchestrator
-- pos-essential-ioworker
-- pos-essential
+- packer-template
+- review-dashboard
 
 
 ## Installation
@@ -34,8 +33,8 @@ npm i docsify-cli -g
 
 ### 2-1. Update submodules
 ```
-git clone https://github.samsungds.net/PBSSD/pos-essential-orchestrator
-git clone https://github.samsungds.net/PBSSD/pos-essential
+git clone https://github.com/ray5273/packer-qemu-template.git
+git clone https://github.com/ray5273/Github-Review-Dashboard-and-Alarm-Bot
 ```
 
 ### 2-2. Run _sidebar.md file auto generation of submodule documentations
