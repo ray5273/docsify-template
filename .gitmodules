@@ -1,0 +1,6 @@
+[submodule "review-dashboard"]
+	path = review-dashboard
+	url = https://github.com/ray5273/Github-Review-Dashboard-and-Alarm-Bot
+[submodule "packer-template"]
+	path = packer-template
+	url = https://github.com/ray5273/packer-qemu-template.git
