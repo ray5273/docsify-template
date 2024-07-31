@@ -28,7 +28,6 @@
     <button class="theme-button" data-theme="buble.css">Buble</button>
     <button class="theme-button" data-theme="dark.css">Dark</button>
     <button class="theme-button" data-theme="pure.css">Pure</button>
-    <button class="theme-button" data-theme="github.css">GitHub</button>
   </div>
   <script>
     window.$docsify = {
@@ -55,15 +54,7 @@
       buttons.forEach(button => {
         button.addEventListener('click', function () {
           const theme = button.getAttribute('data-theme');
-          if (theme === 'github.css') {
-            document.getElementById('theme-stylesheet').href = `//cdn.jsdelivr.net/gh/LIGMATV/docsify-theme-github/${theme}`;
-            // Disable sidebar-folder for GitHub theme
-            document.querySelector('body').classList.remove('sidebar-folder');
-          } else {
-            document.getElementById('theme-stylesheet').href = `//unpkg.com/docsify/lib/themes/${theme}`;
-            // Enable sidebar-folder for other themes
-            document.querySelector('body').classList.add('sidebar-folder');
-          }
+          document.getElementById('theme-stylesheet').href = `//unpkg.com/docsify/lib/themes/${theme}`;
 
           buttons.forEach(btn => btn.classList.remove('active'));
           button.classList.add('active');
@@ -82,7 +73,6 @@
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/LIGMATV/docsify-theme-github/github.css">
 
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-docker.min.js"></script>
