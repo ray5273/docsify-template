@@ -57,8 +57,12 @@
           const theme = button.getAttribute('data-theme');
           if (theme === 'github.css') {
             document.getElementById('theme-stylesheet').href = `//cdn.jsdelivr.net/gh/LIGMATV/docsify-theme-github/${theme}`;
+            // Disable sidebar-folder for GitHub theme
+            document.querySelector('body').classList.remove('sidebar-folder');
           } else {
             document.getElementById('theme-stylesheet').href = `//unpkg.com/docsify/lib/themes/${theme}`;
+            // Enable sidebar-folder for other themes
+            document.querySelector('body').classList.add('sidebar-folder');
           }
 
           buttons.forEach(btn => btn.classList.remove('active'));
