@@ -30,6 +30,11 @@ jobs:
       - name: Generate sidebar based on directory structure
         run: node ./generateSidebar.js
 
+      - name: Generate sidebar for v1.0
+        run: |
+          cd v1.0
+          node ../generateSidebar.js
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:

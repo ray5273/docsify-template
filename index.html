@@ -28,6 +28,7 @@
     <button class="theme-button" data-theme="buble.css">Buble</button>
     <button class="theme-button" data-theme="dark.css">Dark</button>
     <button class="theme-button" data-theme="pure.css">Pure</button>
+    <select id="version-selector"></select>
   </div>
   <script>
     window.$docsify = {
@@ -47,7 +48,12 @@
         noData: 'No Results!',
         depth: 6,
         hideOtherSidebarContent: true, // whether or not to hide other sidebar content
-      }
+      },
+      versions: [
+        { folder: 'v1.0', label: 'v1.0.0', default: true },
+        { folder: 'v2.0', label: 'v2.0.0', default: false },
+      ],
+      versionSelectorLabel: 'Version',
     }
     document.addEventListener('DOMContentLoaded', function () {
       const buttons = document.querySelectorAll('.theme-button');
@@ -59,6 +65,22 @@
           buttons.forEach(btn => btn.classList.remove('active'));
           button.classList.add('active');
         });
+      });
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+      const versionSelector = document.getElementById('version-selector');
+      window.$docsify.versions.forEach(version => {
+        const option = document.createElement('option');
+        option.value = version.folder;
+        option.textContent = version.label;
+        versionSelector.appendChild(option);
+      });
+      versionSelector.addEventListener('change', function () {
+        const selectedVersion = versionSelector.value;
+        alert('Switch to version ' + selectedVersion)
+        const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+        alert('Switch to ' + window.location.origin +"/" + selectedVersion)
+        window.location.href = window.location.origin +"/" + selectedVersion;
       });
     });
   </script>
@@ -73,6 +95,8 @@
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/docsify-versioned-plugin@0.0.1/index.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-versioned-plugin@0.0.1/styles.css">
 
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-docker.min.js"></script>
