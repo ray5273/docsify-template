@@ -38,12 +38,12 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          gh-pages-multi deploy -s v1.0 -d v1.0
-          gh-pages-multi deploy -s v2.0 -d v2.0
+          gh-pages-multi deploy -s v1.0 -t v1.0
+          gh-pages-multi deploy -s v2.0 -t v2.0
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          publish_dir: ./
-          publish_branch: gh-pages
+#      - name: Deploy to GitHub Pages
+#        uses: peaceiris/actions-gh-pages@v4
+#        with:
+#          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+#          publish_dir: ./
+#          publish_branch: gh-pages
