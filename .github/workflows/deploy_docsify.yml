@@ -34,6 +34,8 @@ jobs:
         run: |
           cd v1.0
           node ../generateSidebar.js
+          cd ../v2.0
+          node ../generateSidebar.js
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
