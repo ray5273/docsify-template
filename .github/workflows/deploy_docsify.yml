@@ -25,11 +25,18 @@ jobs:
       - name: Install docsify-cli
         run: npm install -g docsify-cli
 
-      - name: Build Docsify site
-        run: docsify init ./
+      - name: Install gh-pages-multi
+        run: npm install -g  @koumoul/gh-pages-multi
 
       - name: Generate sidebar based on directory structure
         run: node ./generateSidebar.js
+
+      - name: Generate sidebar for v1.0
+        run: |
+          cd v1.0
+          node ../generateSidebar.js
+          cd ../v2.0
+          node ../generateSidebar.js
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

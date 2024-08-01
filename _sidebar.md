@@ -7,3 +7,9 @@
   - frontend
       - [README](/review-dashboard/frontend/README.md)
     - [README](/review-dashboard/README.md)
+- v1.0
+  - db_deploy
+      - [README](/v1.0/db_deploy/README.md)
+  - frontend
+      - [README](/v1.0/frontend/README.md)
+    - [README](/v1.0/README.md)
