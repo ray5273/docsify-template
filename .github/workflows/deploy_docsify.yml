@@ -32,8 +32,10 @@ jobs:
       - name: Generate sidebar for v1.0
         run: |
           cd v1.0
+          docsify init .
           node ../generateSidebar.js
           cd ../v2.0
+          docsify init .
           node ../generateSidebar.js
 
       - name: Deploy to GitHub Pages
