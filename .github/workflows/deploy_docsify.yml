@@ -26,8 +26,8 @@ jobs:
       - name: Install gh-pages-multi
         run: npm install -g  @koumoul/gh-pages-multi
 
-      - name: Generate sidebar based on directory structure
-        run: node ./generateSidebar.js
+#      - name: Generate sidebar based on directory structure
+#        run: node ./generateSidebar.js
 
       - name: Generate sidebar for v1.0
         run: |
@@ -35,6 +35,11 @@ jobs:
           node ../generateSidebar.js
           cd ../v2.0
           node ../generateSidebar.js
+
+      - name: Deploy to GitHub Pages
+        run: |
+          gh-pages-multi deploy -s v1.0 -d v1.0
+          gh-pages-multi deploy -s v2.0 -d v2.0
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
