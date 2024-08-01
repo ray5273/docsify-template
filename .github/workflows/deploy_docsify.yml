@@ -27,9 +27,6 @@ jobs:
       - name: Install gh-pages-multi
         run: npm install -g  @koumoul/gh-pages-multi
 
-      - name: Build Docsify site
-        run: docsify init ./
-
       - name: Generate sidebar based on directory structure
         run: node ./generateSidebar.js
 
