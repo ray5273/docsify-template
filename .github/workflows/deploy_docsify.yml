@@ -3,7 +3,7 @@ name: Deploy Docsify to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - [main, workflow/*]
 
 jobs:
   deploy:
