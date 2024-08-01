@@ -3,7 +3,7 @@ name: Deploy Docsify to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - [main, workflow/*]
 
 jobs:
   deploy:
@@ -23,6 +23,9 @@ jobs:
 
       - name: Install docsify-cli
         run: npm install -g docsify-cli
+
+      - name: Install gh-pages-multi
+        run: npm install -g  @koumoul/gh-pages-multi
 
       - name: Build Docsify site
         run: docsify init ./
