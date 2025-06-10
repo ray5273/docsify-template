@@ -8,13 +8,15 @@ on:
         description: "Report date end(d/MM/yyyy)"
       github_owners_repos:
         description: "owner/repo list to collect pr data from"
+      markdown_file_keyword:
+        description: "markdown file keywords to search in PRs"
 jobs:
   create-report:
     name: "Create report"
     runs-on: ubuntu-latest
     steps:
       - name: "Run script for analytics"
-        uses: AlexSim93/pull-request-analytics-action@v4
+        uses: ray5273/pull-request-analytics-action@main
         with:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # In the case of a personal access token, it needs to be added to the repository's secrets and used in this field.
           GITHUB_REPO_FOR_ISSUE: "docsify-template"
@@ -22,3 +24,4 @@ jobs:
           GITHUB_OWNERS_REPOS: ${{ inputs.github_owners_repos }}
           REPORT_DATE_START: ${{ inputs.report_date_start }}
           REPORT_DATE_END: ${{ inputs.report_date_end }}
+          MARKDOWN_KEYWORDS: ${{ inputs.markdown_file_keyword }}
