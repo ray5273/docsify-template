@@ -17,8 +17,8 @@ jobs:
         uses: AlexSim93/pull-request-analytics-action@v4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # In the case of a personal access token, it needs to be added to the repository's secrets and used in this field.
-          GITHUB_REPO_FOR_ISSUE: "ray5273"
-          GITHUB_OWNER_FOR_ISSUE: "docsify-template"
+          GITHUB_REPO_FOR_ISSUE: "docsify-template"
+          GITHUB_OWNER_FOR_ISSUE: "ray5273"
           GITHUB_OWNERS_REPOS: ${{ inputs.github_owners_repos }}
           REPORT_DATE_START: ${{ inputs.report_date_start }}
           REPORT_DATE_END: ${{ inputs.report_date_end }}
